@@ -1,3 +1,4 @@
+// Add these icons to the existing file
 import { 
     FaRocket, 
     FaBullseye, 
@@ -22,6 +23,12 @@ import {
     FaShieldAlt,
     FaCogs,
     FaPaintBrush,
+    FaFilePdf,
+    FaFileDownload,
+    FaPaperPlane,
+    FaCheckCircle,
+    FaSpinner,
+    FaExclamationTriangle,
   } from 'react-icons/fa';
   import { 
     SiReact, 
@@ -69,6 +76,12 @@ import {
     shield: FaShieldAlt,
     cogs: FaCogs,
     paintbrush: FaPaintBrush,
+    pdf: FaFilePdf,
+    download: FaFileDownload,
+    send: FaPaperPlane,
+    success: FaCheckCircle,
+    spinner: FaSpinner,
+    error: FaExclamationTriangle,
     react: SiReact,
     nodejs: SiNodedotjs,
     python: SiPython,
@@ -92,4 +105,30 @@ import {
   
   export const getIcon = (iconName, defaultIcon = FaCode) => {
     return iconMap[iconName] || defaultIcon;
+  };
+  
+  // Icon categories for easier access
+  export const socialIcons = {
+    github: SiGithub,
+    linkedin: SiLinkedin,
+    gmail: SiGmail,
+  };
+  
+  export const techIcons = {
+    react: SiReact,
+    nodejs: SiNodedotjs,
+    python: SiPython,
+    docker: SiDocker,
+    kubernetes: SiKubernetes,
+    tensorflow: SiTensorflow,
+    pytorch: SiPytorch,
+    mongodb: SiMongodb,
+    postgresql: SiPostgresql,
+    aws: SiAmazonaws,
+    gcp: SiGooglecloud,
+    typescript: SiTypescript,
+    javascript: SiJavascript,
+    tailwind: SiTailwindcss,
+    figma: SiFigma,
+    git: SiGit,
   };

@@ -186,80 +186,90 @@ const Hero = ({ scrollToSection }) => {
             </motion.div>
           </motion.div>
 
+          
           {/* Right - Profile Image */}
-          <motion.div
+            <motion.div
             className="flex-1 flex justify-center"
             initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ 
-              delay: 0.5,
-              duration: 1,
-              type: 'spring',
-              stiffness: 100,
+                delay: 0.5,
+                duration: 1,
+                type: 'spring',
+                stiffness: 100,
             }}
-          >
+            >
             <div className="relative">
-              {/* Glow effects */}
-              <motion.div
+                {/* Glow effects */}
+                <motion.div
                 className="absolute -inset-4 rounded-full"
                 animate={{
-                  boxShadow: [
+                    boxShadow: [
                     '0 0 40px rgba(108, 99, 255, 0.2)',
                     '0 0 80px rgba(108, 99, 255, 0.4)',
                     '0 0 40px rgba(108, 99, 255, 0.2)',
-                  ],
+                    ],
                 }}
                 transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
                 }}
-              />
-              
-              {/* Main image container */}
-              <motion.div
+                />
+                
+                {/* Main image container */}
+                <motion.div
                 className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-accent/30"
                 animate={{
-                  y: [0, -15, 0],
+                    y: [0, -15, 0],
                 }}
                 transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
                 }}
-              >
-                {/* Placeholder gradient */}
-                <div className="w-full h-full bg-gradient-to-br from-accent/20 via-dark-card to-accent/10 flex items-center justify-center">
-                  <div className="text-center">
-                    <span className="text-7xl sm:text-8xl lg:text-9xl font-bold gradient-text">
-                      {SITE_CONFIG.name.split(' ').map(word => word[0]).join('')}
-                    </span>
-                    <p className="text-gray-500 text-sm mt-2">Your Photo Here</p>
-                  </div>
-                </div>
-              </motion.div>
+                >
+                {/* Actual Image */}
+                <img
+                    src="/images/profile.jpg"
+                    alt="Tabib Hassan"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                    // Fallback if image doesn't exist
+                    e.target.style.display = 'none';
+                    e.target.parentElement.classList.add('bg-gradient-to-br', 'from-accent/20', 'via-dark-card', 'to-accent/10', 'flex', 'items-center', 'justify-center');
+                    const fallback = document.createElement('div');
+                    fallback.className = 'text-center';
+                    fallback.innerHTML = `
+                        <span class="text-7xl sm:text-8xl lg:text-9xl font-bold gradient-text">TH</span>
+                        <p class="text-gray-500 text-sm mt-2">Add your photo at /public/images/profile.jpg</p>
+                    `;
+                    e.target.parentElement.appendChild(fallback);
+                    }}
+                />
+                </motion.div>
 
-              {/* Decorative ring */}
-              <motion.div
+                {/* Decorative ring */}
+                <motion.div
                 className="absolute -inset-6 rounded-full border border-accent/10"
                 animate={{ rotate: 360 }}
                 transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: 'linear',
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: 'linear',
                 }}
-              />
-              <motion.div
+                />
+                <motion.div
                 className="absolute -inset-10 rounded-full border border-accent/5"
                 animate={{ rotate: -360 }}
                 transition={{
-                  duration: 25,
-                  repeat: Infinity,
-                  ease: 'linear',
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: 'linear',
                 }}
-              />
+                />
             </div>
-          </motion.div>
+            </motion.div>
         </div>
       </div>
 
