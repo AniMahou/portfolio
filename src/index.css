@@ -26,6 +26,7 @@
   --animate-border-glow: border-glow 2s ease-in-out infinite;
 }
 
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -94,6 +95,21 @@ body {
   color: white;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  /* Increase base font size */
+  font-size: 18px;
+}
+
+/* Larger text at different breakpoints */
+@media (min-width: 768px) {
+  body {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
 }
 
 /* Form element styles */
@@ -113,20 +129,17 @@ textarea {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Selection */
 ::selection {
   background: rgba(108, 99, 255, 0.3);
   color: white;
 }
 
-/* Focus visible */
 *:focus-visible {
   outline: 2px solid #6C63FF;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Print styles */
 @media print {
   body {
     background: white;

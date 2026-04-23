@@ -7,14 +7,14 @@ const Card = ({
   className = '', 
   onClick,
   hover = true,
-  padding = 'md',
+  padding = 'lg',  // Changed default to lg
   variant = 'default',
 }) => {
   const paddings = {
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
-    xl: 'p-10',
+    sm: 'p-5',
+    md: 'p-7',
+    lg: 'p-9',
+    xl: 'p-12',
   };
 
   const variants = {

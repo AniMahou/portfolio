@@ -19,7 +19,7 @@ const About = () => {
 
         {/* Cards Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-20"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -38,7 +38,7 @@ const About = () => {
                     {card.icon}
                   </motion.div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-1">
+                    <h3 className="text-2xl font-bold text-white mb-2">
                       {card.title}
                     </h3>
                     {/* Stats if available */}
@@ -56,7 +56,7 @@ const About = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-base leading-relaxed">
                   {card.description}
                 </p>
 

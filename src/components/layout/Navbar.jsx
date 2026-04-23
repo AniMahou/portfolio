@@ -77,7 +77,7 @@ const Navbar = ({ activeSection, scrollToSection, isScrolled }) => {
                 <motion.button
                   key={link.id}
                   onClick={() => handleNavClick(link.id)}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300 ${
+                  className={`relative px-4 py-2 text-base font-medium rounded-lg transition-colors duration-300 ${
                     isActive
                       ? 'text-white'
                       : 'text-gray-400 hover:text-white'
@@ -85,7 +85,7 @@ const Navbar = ({ activeSection, scrollToSection, isScrolled }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {/* Active background */}
+                  {/* Active background - FIXED: Added overflow-hidden to parent nav */}
                   {isActive && (
                     <motion.div
                       layoutId="navbar-active"
@@ -94,6 +94,12 @@ const Navbar = ({ activeSection, scrollToSection, isScrolled }) => {
                         type: 'spring',
                         stiffness: 380,
                         damping: 30,
+                        // FIX: Prevent the layout animation from overflowing
+                        layout: {
+                          type: 'spring',
+                          stiffness: 380,
+                          damping: 30,
+                        },
                       }}
                     />
                   )}
@@ -102,7 +108,7 @@ const Navbar = ({ activeSection, scrollToSection, isScrolled }) => {
                   {isActive && (
                     <motion.div
                       layoutId="navbar-dot"
-                      className="absolute -bottom-1 left-1/2 w-1 h-1 rounded-full bg-accent -translate-x-1/2"
+                      className="absolute -bottom-1 left-1/2 w-1.5 h-1.5 rounded-full bg-accent -translate-x-1/2"
                       transition={{
                         type: 'spring',
                         stiffness: 380,
@@ -112,7 +118,7 @@ const Navbar = ({ activeSection, scrollToSection, isScrolled }) => {
                   )}
                   
                   <span className="relative z-10 flex items-center gap-1.5">
-                    <span className="text-sm">{link.icon}</span>
+                    <span className="text-base">{link.icon}</span>
                     {link.label}
                   </span>
                 </motion.button>
@@ -173,18 +179,18 @@ const Navbar = ({ activeSection, scrollToSection, isScrolled }) => {
                     key={link.id}
                     variants={mobileItemVariants}
                     onClick={() => handleNavClick(link.id)}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
+                    className={`w-full flex items-center gap-3 px-5 py-4 rounded-lg text-left transition-all duration-300 text-lg ${
                       isActive
                         ? 'bg-accent/20 text-white border border-accent/30'
                         : 'text-gray-400 hover:text-white hover:bg-white/5 border border-transparent'
                     }`}
                   >
-                    <span className="text-lg">{link.icon}</span>
+                    <span className="text-xl">{link.icon}</span>
                     <span className="font-medium">{link.label}</span>
                     {isActive && (
                       <motion.div
                         layoutId="mobile-active-dot"
-                        className="ml-auto w-2 h-2 rounded-full bg-accent"
+                        className="ml-auto w-2.5 h-2.5 rounded-full bg-accent"
                       />
                     )}
                   </motion.button>
@@ -193,8 +199,8 @@ const Navbar = ({ activeSection, scrollToSection, isScrolled }) => {
             </div>
             
             {/* Mobile menu footer */}
-            <div className="px-4 py-4 border-t border-white/10">
-              <p className="text-xs text-gray-500 text-center">
+            <div className="px-4 py-5 border-t border-white/10">
+              <p className="text-sm text-gray-500 text-center">
                 {SITE_CONFIG.name} &copy; {new Date().getFullYear()}
               </p>
             </div>

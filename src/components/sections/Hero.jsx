@@ -61,7 +61,7 @@ const Hero = ({ scrollToSection }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="text-xl sm:text-2xl md:text-3xl text-gray-400 mb-8"
+              className="text-5xl sm:text-3xl md:text-4xl text-gray-400 mb-8"
             >
               <TypeAnimation
                 sequence={[
@@ -89,13 +89,13 @@ const Hero = ({ scrollToSection }) => {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-gray-400 mb-8"
             >
               <div className="flex items-center gap-2">
-                <span className="text-lg">📍</span>
-                <span>{SITE_CONFIG.location}</span>
+                <span className="text-2xl">📍</span>
+                <span className="text-2xl">{SITE_CONFIG.location}</span>
               </div>
               <span className="hidden sm:inline text-gray-600">•</span>
               <div className="flex items-center gap-2">
-                <span className="text-lg">🎓</span>
-                <span>{SITE_CONFIG.year}, {SITE_CONFIG.university}</span>
+                <span className="text-xl">🎓</span>
+                <span className="text-xl">{SITE_CONFIG.year}, {SITE_CONFIG.university}</span>
               </div>
             </motion.div>
 
@@ -108,7 +108,7 @@ const Hero = ({ scrollToSection }) => {
             >
               <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent/10 border border-accent/30 animate-border-glow">
                 <span className="text-2xl">🏆</span>
-                <span className="text-accent font-semibold text-lg">
+                <span className="text-accent font-semibold text-xl">
                   {SITE_CONFIG.tagline}
                 </span>
               </div>

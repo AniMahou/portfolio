@@ -6,7 +6,7 @@ import { fadeInLeft } from '../../utils/animationVariants';
 const ExperienceCard = ({ experience, index }) => {
   return (
     <motion.div
-      className="relative pl-8 pb-12 last:pb-0"
+      className="relative pl-10 pb-16 last:pb-0"
       variants={fadeInLeft}
       initial="initial"
       whileInView="animate"
@@ -37,7 +37,7 @@ const ExperienceCard = ({ experience, index }) => {
           <div className="flex items-center gap-3">
             <span className="text-2xl">{experience.icon}</span>
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white">
+              <h3 className="text-xl sm:text-2xl font-bold text-white">
                 {experience.company}
               </h3>
               <p className="text-accent font-medium text-sm">
@@ -65,7 +65,7 @@ const ExperienceCard = ({ experience, index }) => {
         )}
 
         {/* Description */}
-        <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
+        <p className="text-gray-400 text-base leading-relaxed mb-4">
           {experience.details}
         </p>
 
