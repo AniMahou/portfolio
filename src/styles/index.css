@@ -1,0 +1,3 @@
+/* Re-export all styles */
+@import './animations.css';
+@import './custom.css';
