@@ -95,3 +95,21 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
+
+/* Add these custom styles for form elements */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+input:disabled,
+textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Smooth transitions for form elements */
+input,
+textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}

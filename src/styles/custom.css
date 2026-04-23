@@ -1,99 +1,64 @@
-/* Custom utility styles beyond Tailwind */
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-  }
-  
-  .glass-card-hover {
-    transition: all 0.3s ease;
-  }
-  
-  .glass-card-hover:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(108, 99, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.1);
-    transform: translateY(-4px);
-  }
-  
-  .gradient-text {
-    background: linear-gradient(135deg, #6C63FF, #a78bfa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .gradient-border {
-    position: relative;
-  }
-  
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, #6C63FF, #a78bfa);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-  
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-  
-  .section-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.3), transparent);
-  }
-  
-  /* Scrollbar styling */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #0a0a0a;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: rgba(108, 99, 255, 0.3);
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(108, 99, 255, 0.5);
-  }
-  
-  /* Selection styling */
-  ::selection {
-    background: rgba(108, 99, 255, 0.3);
-    color: white;
-  }
-  
-  /* Smooth scrolling for the whole page */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Focus styles */
-  *:focus-visible {
-    outline: 2px solid #6C63FF;
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-  
-  /* Card grid auto-fit */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
+/* Add these to your existing custom.css file */
+
+/* Form input autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Form focus glow effect */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.1);
+}
+
+/* Textarea resize handle */
+textarea::-webkit-resizer {
+  display: none;
+}
+
+/* Footer link animations */
+.footer-link {
+  position: relative;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #6C63FF;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Contact card hover elevation */
+.contact-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(108, 99, 255, 0.1);
+}
+
+/* Pulse dot animation for status */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
