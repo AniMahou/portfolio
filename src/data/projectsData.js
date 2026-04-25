@@ -12,7 +12,7 @@ export const projects = [
       featured: true,
       stats: {
         stars: '24',
-        commits: '156',
+        commits: '157',
       },
     },
     {
