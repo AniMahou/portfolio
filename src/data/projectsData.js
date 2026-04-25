@@ -21,7 +21,7 @@ export const projects = [
       description: 'WebSocket-based collaborative workspace with real-time document editing, video calls, and task management. Supports multiple concurrent users with conflict resolution.',
       longDescription: 'Engineered a Google Docs-style collaboration tool using Next.js and Socket.io. Implements operational transformation for conflict-free real-time editing and WebRTC for peer-to-peer video.',
       techStack: ['Next.js', 'Socket.io', 'WebRTC', 'MongoDB', 'Tailwind CSS'],
-      githubLink: 'https://github.com/tabibhassan/collab-platform',
+      githubLink: 'https://github.com/AniMahou/',
       deploymentLink: 'https://collab-platform.vercel.app',
       image: '🤝',
       category: 'Full Stack',
